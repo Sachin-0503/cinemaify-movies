@@ -34,11 +34,12 @@ white-space: nowrap;
 const MovieComponent =(props)=>{
   const { Title, Year, imdbID, Type, Poster } = props.movie;
  return(
-   <MovieContainer>
+   <MovieContainer
     onClick={() => {
         props.onMovieSelect(imdbID);
         window.scrollTo({ top: 0, behavior: "smooth" });
       }}
+      >
     <Coverimage src={Poster} alt={Title}/>
      <MovieName>
      <MovieInfo>Year : {Year}</MovieInfo>
