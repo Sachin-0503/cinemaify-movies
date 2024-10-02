@@ -3,7 +3,7 @@ import MovieComponent from './Components/MovieComponent';
 import MovieInfoComponent from './Components/MovieInfoComponent';
 import { useState } from 'react';
 import axios from 'axios';
-const API_KEY='89a4a352';
+export const API_KEY='89a4a352';
 const Container =styled.div`
 display:flex;
 flex-direction:column;
@@ -59,12 +59,14 @@ margin: 15px;
   flex: wrap;
   padding:30px;
   justify-content= space-evenly;
+  align-items:center;
  `;
  const Placeholder = styled.img`
   width: 120px;
   height: 120px;
   margin: 150px;
   opacity: 50%;
+
 `;
 
 function App() {
@@ -89,7 +91,7 @@ function App() {
     const timeout = setTimeout(() => fetchData(e.target.value), 500);
     updateTimeoutId(timeout);
   };
-  return <Container>
+  return (<Container>
     <Header>
       <Appname>
         <MOvieIcon src='movieIcon.svg'/>Cinemaify App</Appname>
@@ -103,16 +105,16 @@ function App() {
     <Movielistcontainer>
     {movieList?.length ? (
           movieList.map((movie, index) => (
-     <MovieComponent
+     <MovieComponent 
      key={index}
      movie={movie}
      onMovieSelect={onMovieSelect}/>
     ))
   ) : (
-    <Placeholder src="/react-movie-app/movie-icon.svg" />
+    <Placeholder src="movieIcon.svg" />
   )}
     </Movielistcontainer>
-  </Container>;
+  </Container>) ;
 }
 
 export default App;

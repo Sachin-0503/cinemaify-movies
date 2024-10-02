@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import Axios from "axios";
 import styled from "styled-components";
-import API_KEY from '../App.js';
+import {API_KEY} from '../App.js';
 const Container = styled.div`
   display: flex;
   flex-direction: row;

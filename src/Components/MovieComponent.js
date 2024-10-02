@@ -19,7 +19,11 @@ color: black;
 margin: 15px 0;
 white-space:nowrap;
 text_overflow: ellipsis;
-
+`;
+const InfoColumn = styled.div`
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
 `;
 const MovieInfo=styled.div`
 display: flex;
@@ -41,10 +45,11 @@ const MovieComponent =(props)=>{
       }}
       >
     <Coverimage src={Poster} alt={Title}/>
-     <MovieName>
-     <MovieInfo>Year : {Year}</MovieInfo>
-     <MovieInfo>Type : {Type}</MovieInfo>
-     </MovieName>
+     <MovieName>{Title}</MovieName>
+     <InfoColumn>
+        <MovieInfo>Year : {Year}</MovieInfo>
+        <MovieInfo>Type : {Type}</MovieInfo>
+      </InfoColumn>
    </MovieContainer>
  );
 };
